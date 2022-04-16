@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hire_me_auto/src/constants/text.dart';
 import 'package:hire_me_auto/widgets/td_checkbox.dart' as k;
 
@@ -19,7 +20,7 @@ class GroupedCheckBox extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10),
-          child: kText(label, fontSize: 16, fontWeight: FontWeight.bold),
+          child: kText(label, fontSize: 18.sp, fontWeight: FontWeight.w600),
         ),
         ValueListenableBuilder<List<bool>>(
             valueListenable: state,

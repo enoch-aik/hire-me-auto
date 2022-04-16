@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hire_me_auto/screens/home/screen.dart';
-import 'package:hire_me_auto/screens/jet_search/screen.dart';
 import 'package:hire_me_auto/src/res/theme.dart';
 
 void main() {
@@ -12,11 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,
-      title: 'Hire Me Auto',
-      theme: customTheme,
-      home: const HomeScreen(),
-    );
+    return ScreenUtilInit(
+    designSize: const Size(414,896),builder: (context) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Hire Me Auto',
+        theme: customTheme,
+        home: const HomeScreen(),
+      );
+    });
   }
 }
 /*

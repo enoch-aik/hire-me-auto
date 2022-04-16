@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hire_me_auto/src/constants/color.dart';
 import 'package:hire_me_auto/src/constants/jet_category.dart';
 import 'package:hire_me_auto/src/constants/text.dart';
@@ -26,7 +27,7 @@ class _JetCategoryState extends State<JetCategory> {
         opacity = 1.0;
       } else {}
       return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 13),
+        padding: EdgeInsets.symmetric(horizontal: 13.5.w),
         child: InkWell(
           onTap: () {
             setState(() {
@@ -43,9 +44,10 @@ class _JetCategoryState extends State<JetCategory> {
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
                         color: borderColor,
-                        width: 1,
+                        width: 0.5,
                       )),
-                  height: 55,
+                  height: 64.w,
+                  width: 64.w,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Opacity(
@@ -54,10 +56,12 @@ class _JetCategoryState extends State<JetCategory> {
                         imageUrl,
                         fit: BoxFit.contain,
                         filterQuality: FilterQuality.high,
+                        width: 32.w,
+                        height: 32.w,
                       ),
                     ),
                   )),
-              kText(name, fontSize: 11, color: borderColor),
+              kText(name, fontSize: 12.sp, color: borderColor,fontWeight: FontWeight.w400),
             ],
           ),
         ),
@@ -72,40 +76,43 @@ class _JetCategoryState extends State<JetCategory> {
         }
       },
       child: Container(
-        height: 125,
+        height: 148.h,
         width: MediaQuery.of(context).size.width,
         color: CustomColors.secBackgroundColor,
-        child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: List.generate(
-                jetCategory.length,
-                (index) => jetCard(
-                    name: jetCategory[index]['name'],
-                    imageUrl: jetCategory[index]['imageUrl'],
-                    index: jetCategory[index]['id']))
-            /* jetCard(
-                  name: 'Turbo prop',
-                  imageUrl: 'assets/images/plane1.png',
-                  borderColor: CustomColors.categoryBorderColor,
-                  index: 0),*/
-            /*ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  physics: const BouncingScrollPhysics(),
-                  itemCount: jetCategory.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: jetCard(
-                          name: jetCategory[index]['name'],
-                          imageUrl: jetCategory[index]['imageUrl'],
-                          index: jetCategory[index]['id']),
-                    );
-                  })*/
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 30.h,horizontal: 12.w),
+          child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(
+                  jetCategory.length,
+                  (index) => jetCard(
+                      name: jetCategory[index]['name'],
+                      imageUrl: jetCategory[index]['imageUrl'],
+                      index: jetCategory[index]['id']))
+              /* jetCard(
+                    name: 'Turbo prop',
+                    imageUrl: 'assets/images/plane1.png',
+                    borderColor: CustomColors.categoryBorderColor,
+                    index: 0),*/
+              /*ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: jetCategory.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: jetCard(
+                            name: jetCategory[index]['name'],
+                            imageUrl: jetCategory[index]['imageUrl'],
+                            index: jetCategory[index]['id']),
+                      );
+                    })*/
 
-            ),
+              ),
+        ),
       ),
     );
   }

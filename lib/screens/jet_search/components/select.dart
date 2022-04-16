@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hire_me_auto/widgets/grouped_check_box.dart';
 
@@ -73,7 +74,8 @@ class _KSelectOptionsState extends State<KSelectOptionsButton> {
               color: Colors.transparent),
           child: SvgPicture.asset(
             'assets/svg/filter.svg',
-            height: 30,
+            height: 20.w,
+            width: 20.w,
           ),
           alignment: Alignment.center),
       onSelected: (val) {
