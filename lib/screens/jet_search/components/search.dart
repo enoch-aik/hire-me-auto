@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hire_me_auto/screens/jet_search/components/popup.dart';
+import 'package:hire_me_auto/screens/jet_search/components/select.dart';
 import 'package:hire_me_auto/widgets/filter_overlay.dart';
 
 final key = GlobalKey<_SearchState>();
@@ -84,7 +84,8 @@ class _SearchState extends State<Search> {
               border: InputBorder.none,
               fillColor: Colors.white,
               filled: true,
-              suffixIcon: const PopUp()
+              suffixIcon:
+                  KSelectOptionsButton(menuItems: const [], onChange: (val) {})
               /*InkWell(
                 focusNode: _focusNode,
                 onTap: () {
