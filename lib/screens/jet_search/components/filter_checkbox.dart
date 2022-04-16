@@ -39,11 +39,6 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
                         fillColor:
                             MaterialStateProperty.all(Colors.transparent),
                         checkColor: CustomColors.secTextColor,
-                        /*controlAffinity: ListTileControlAffinity.leading,
-                        dense: true,
-                        title: kText(
-                          widget.checkListItems[index]["title"],
-                        ),*/
                         value: widget.checkListItems[index]["value"],
                         onChanged: (value) {
                           setState(() {
@@ -51,10 +46,7 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
                               element["value"] = false;
                             }
                             widget.checkListItems[index]["value"] = value;
-                            /*selected =
-                                "${checkListItems[index]["id"]}, ${checkListItems[index]["title"]}, ${checkListItems[index]["value"]}";
-                          */
-                          });
+                           });
                         },
                       ),
                     ),

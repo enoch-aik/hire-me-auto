@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hire_me_auto/src/constants/text.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -18,7 +19,8 @@ class _ListingCardState extends State<ListingCard> {
   Widget build(BuildContext context) {
     Widget showImage({imageUrl}) {
       return SizedBox(
-        width: double.infinity,
+        width: 382.w,
+        height: 248.h,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Image.asset(
@@ -46,9 +48,9 @@ class _ListingCardState extends State<ListingCard> {
               dotWidth: 9),
         );
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 15),
+      padding: EdgeInsets.symmetric(vertical: 21.h, horizontal: 16.w),
       child: Card(
-        elevation: 5,
+        elevation: 4.h,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Stack(
           children: [
@@ -74,66 +76,71 @@ class _ListingCardState extends State<ListingCard> {
                           viewportFraction: 1,
                         )),
                     Positioned(
-                        bottom: 10,
+                        bottom: 20.h,
                         right: MediaQuery.of(context).size.width * 0.35,
                         child: buildIndicator())
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0, top: 10),
+                  padding: EdgeInsets.only(
+                      left: 12.w, top: 12.h, bottom: 11.5.h, right: 15.w),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            kText('Legacy 600',
-                                fontSize: 14, fontWeight: FontWeight.bold),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 5),
-                              child: kText('From \$10,000', fontSize: 14),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
-                              child: Row(
-                                children: [
-                                  SvgPicture.asset('assets/svg/seater.svg'),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 2),
-                                    child: kText('13 seater',
-                                        fontSize: 13,
-                                        color: const Color(0xff666666)),
-                                  ),
-                                  SvgPicture.asset('assets/svg/star.svg'),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 2),
-                                    child: kText('4.5 Rating',
-                                        fontSize: 13,
-                                        color: const Color(0xff666666)),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 3.0),
-                        child: Card(
-                          elevation: 0,
-                          color: const Color(0xffe0dfdf),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                right: 10, bottom: 5, top: 5, left: 10),
-                            child: kText('Adamawa', fontSize: 14),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(),
+                            child: kText('Legacy 600',
+                                fontSize: 16.sp, fontWeight: FontWeight.w600),
                           ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 5),
+                            child: kText('From \$10,000', fontSize: 14.sp),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: Row(
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/svg/seater.svg',
+                                  width: 15.w,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 9.w, right: (2.5).w),
+                                  child: kText('13 seater',
+                                      fontSize: 14.sp,
+                                      color: const Color(0xff666666)),
+                                ),
+                                SvgPicture.asset(
+                                  'assets/svg/star.svg',
+                                  width: (22.83).w,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: (4.59).w),
+                                  child: kText('4.5 Rating',
+                                      fontSize: 14.sp,
+                                      color: const Color(0xff666666)),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      Card(
+                        elevation: 0,
+                        color: const Color(0xffe0dfdf),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 6.h,
+                            horizontal: 17.w,
+                          ),
+                          child: kText('Adamawa', fontSize: 14),
                         ),
                       )
                     ],

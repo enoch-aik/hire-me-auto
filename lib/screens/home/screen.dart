@@ -34,7 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)))),
-                  child: kText('Go to Jet Search', color: Colors.white)),
+                  child: kText(
+                    'Go to Jet Search',
+                    color: Colors.white,
+                  )),
             )
           ],
         ),

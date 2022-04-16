@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hire_me_auto/src/constants/color.dart';
 import 'package:hire_me_auto/src/constants/text.dart';
@@ -46,17 +47,18 @@ class _AppBarButtonState extends State<AppBarButton> {
             DropdownButtonHideUnderline(
               child: DropdownButton(
                   icon: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: SvgPicture.asset('assets/svg/drop_down.svg'),
+                    padding:  EdgeInsets.only(right: 7.76.w,left: 4.76.w),
+                    child: SvgPicture.asset('assets/svg/drop_down.svg',width: (8.49).w,),
                   ),
                   //dropdownColor: CustomColors.secBackgroundColor,
                   value: initialValue,
+                  style: TextStyle(fontSize: 16.sp),
                   items: items.map((String items) {
                     return DropdownMenuItem(
                       value: items,
                       child: Row(
                         children: [
-                          kText(items, fontSize: 15),
+                          kText(items, fontSize: 14.sp,fontWeight: FontWeight.w400),
                         ],
                       ),
                     );

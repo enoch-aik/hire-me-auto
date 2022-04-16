@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hire_me_auto/screens/jet_search/components/body.dart';
 import 'package:hire_me_auto/screens/jet_search/components/location_button.dart';
@@ -27,14 +28,14 @@ class _JetSearchState extends State<JetSearch> {
             },
             child: Scaffold(
                 appBar: PreferredSize(
-                  preferredSize: const Size.fromHeight(85),
+                  preferredSize: Size.fromHeight(104.h),
                   child: Container(
                     padding: const EdgeInsets.only(top: 20),
                     color: CustomColors.appColor,
                     child: AppBar(
                       elevation: 0,
                       title: kText('Jet Search',
-                          fontSize: 20, color: Colors.white),
+                          fontSize: 18.sp, color: Colors.white,fontWeight: FontWeight.w600),
                       actions: const [AppBarButton()],
                     ),
                   ),
